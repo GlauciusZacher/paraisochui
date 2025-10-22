@@ -1,0 +1,44 @@
+FROM php:8.4-apache
+
+ARG LOCAL_SSL_NAME
+
+ADD ./local_ssl/${LOCAL_SSL_NAME}.crt /etc/ssl/certs/localhost.crt
+ADD ./local_ssl/${LOCAL_SSL_NAME}.key /etc/ssl/private/localhost.key
+
+
+RUN sed -i '/SSLCertificateFile.*snakeoil\.pem/c\SSLCertificateFile \/etc\/ssl\/certs\/localhost.crt' /etc/apache2/sites-available/default-ssl.conf
+RUN sed -i '/SSLCertificateKeyFile.*snakeoil\.key/cSSLCertificateKeyFile /etc/ssl/private/localhost.key\' /etc/apache2/sites-available/default-ssl.conf
+
+# Enable SSL
+RUN set -eux; \
+    apt-get update; \
+    apt-get install ssl-cert; \
+    a2enmod ssl rewrite headers; \
+    a2ensite default-ssl
+
+# Enable mod_rewrite for images with apache
+RUN if command -v a2enmod >/dev/null 2>&1; then \
+    a2enmod rewrite headers \
+    ;fi    
+
+# Install Xdebug
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
+RUN apt-get install --no-install-recommends --assume-yes --quiet ca-certificates curl git &&\
+    rm -rf /var/lib/apt/lists/*
+
+RUN curl -Lsf 'https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz' | tar -C '/usr/local' -xvzf -
+ENV PATH=/usr/local/go/bin:$PATH
+RUN go get github.com/mailhog/mhsendmail
+RUN cp /root/go/bin/mhsendmail /usr/bin/mhsendmail
+# Configure PHP with MailHog and Xdebug
+RUN echo 'sendmail_path = /usr/bin/mhsendmail --smtp-addr mailhog:1025' > /usr/local/etc/php/php.ini && \
+    echo '' >> /usr/local/etc/php/php.ini && \
+    echo '; Xdebug configuration' >> /usr/local/etc/php/php.ini && \
+    echo 'xdebug.mode=debug' >> /usr/local/etc/php/php.ini && \
+    echo 'xdebug.start_with_request=yes' >> /usr/local/etc/php/php.ini && \
+    echo 'xdebug.client_host=host.docker.internal' >> /usr/local/etc/php/php.ini && \
+    echo 'xdebug.client_port=9003' >> /usr/local/etc/php/php.ini && \
+    echo 'xdebug.log=/tmp/xdebug.log' >> /usr/local/etc/php/php.ini && \
+    echo 'xdebug.discover_client_host=0' >> /usr/local/etc/php/php.ini
