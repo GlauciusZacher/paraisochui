@@ -1,0 +1,6 @@
+[submodule "security"]
+	path = security
+	url = https://github.com/GlauciusZacher/security
+[submodule "public_html/modules/security"]
+	path = public_html/modules/security
+	url = https://github.com/GlauciusZacher/security
