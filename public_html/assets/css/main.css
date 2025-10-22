@@ -13,9 +13,9 @@ html {
 }
 
 *,
-*:before,
-*:after {
-    box-sizing: inherit;
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 html {
@@ -28,6 +28,7 @@ body {
     font-family: 'Krub', cursive;
     font-size: 0.9em;
     margin: 0;
+    width: 100%;
     /* display: grid;
     grid-template-rows: min-content 60px auto 80px; */
     /* background-color: #3074A4; */
@@ -85,7 +86,7 @@ nav.navbar ul li a {
     height: 100vh;
 }
 
-.swiper-wrapper {
+.swipertop .swiper-wrapper {
     width: auto;
     height: 100%;
 }
@@ -114,20 +115,21 @@ nav.navbar ul li a {
     margin: 0;
 }
 
-.swiper-pagination-bullet {
+.swipertop .swiper-pagination-bullet {
     width: 20px;
     height: 4px;
     border-radius: 0px;
     /* background: white; */
 }
 
-.swiper-pagination-bullet-active {
+.swipertop .swiper-pagination-bullet-active {
     background-color: var(--background-secondary);
 }
 
 main {
     padding: 20px;
     padding-top: 120px;
+    width: 100%;
 }
 
 .alojamientos {
@@ -144,12 +146,26 @@ main {
     gap: 20px;
 }
 
-.alojamientos-module img {
+/* .alojamientos-module>div>img {
     width: 100%;
+    border-radius: 10px;
+} */
+.alojamientos-module>div.image {
+    display: flex;
+    flex: 1;
+    background-color: white;
+    border: 4px solid var(--background-secondary);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.alojamientos-module>div.image>img {
+    max-width: 100%;
+    object-fit: contain;
     border-radius: 10px;
 }
 
-.alojamientos-module div {
+.alojamientos-module>div.text {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -159,4 +175,120 @@ main {
     border: 4px solid var(--background-secondary);
     border-radius: 10px;
     padding: 20px;
+}
+
+.alojamientos-module .swiper-container {
+    flex: 1;
+    min-width: 0;
+    width: 100px;
+    height: auto;
+}
+
+.alojamientos-module .swiper-slide>img {
+    /* width: 500px; */
+    /* height: 500px; */
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#map {
+    margin: auto;
+    border: 4px solid var(--background-secondary);
+    border-radius: 10px;
+    min-width: 300px;
+    min-height: 300px;
+    /* width: 100%; */
+    /* height: 100%; */
+    position: absolute;
+    top: 140px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+.gmaps_link {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    z-index: 12;
+    background-color: var(--background-primary);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.contacto>div {
+    flex: 1;
+    background-color: white;
+    border: 4px solid var(--background-secondary);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#formContainer form {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1em;
+}
+
+#formContainer form input,
+#formContainer form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid var(--background-secondary);
+    border-radius: 5px;
+    font-family: 'Krub', cursive;
+    font-size: 1em;
+    resize: vertical;
+}
+
+#formContainer form textarea {
+    min-height: 200px;
+}
+
+#formContainer form input:focus,
+#formContainer form textarea:focus {
+    outline: none;
+    border-color: var(--background-primary);
+}
+
+#formContainer form label {
+    justify-self: end;
+    align-self: center;
+}
+
+#formContainer p.alert {
+    font-weight: 700;
+    color: var(--background-primary);
+    text-align: center;
+}
+
+#formContainer button.btn,
+#formContainer form input[type="submit"] {
+    grid-column: span 2;
+    padding: 10px;
+    background-color: var(--background-primary);
+    border: 4px solid var(--background-secondary);
+    color: white;
+    /* border: none; */
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .alojamientos-module {
+        flex-direction: column;
+    }
 }

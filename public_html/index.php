@@ -24,36 +24,34 @@ $pages = ['home', 'alojamientos', 'ubicacion', 'contacto'];
                 <li><a href="/contacto">Contacto</a></li>
             </ul>
         </nav>
-        <?php //include 'view/swiper.php'; 
-        ?>
-        <?php
-        if (in_array($page, $pages)) {
-            $file = "app/{$page}.php";
-            include(is_file($file) ? $file : 'app/home.php');
-        }
-        ?>
     </header>
+    <?php
+    if (in_array($page, $pages)) {
+        $file = "app/{$page}.php";
+        include(is_file($file) ? $file : 'app/home.php');
+    }
+    ?>
     <script src="./assets/swiper/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // var swiper = new Swiper('.swiperp', {
-            //     slidesPerView: 1,
-            //     spaceBetween: 0,
+            var swiper = new Swiper('.swiper', {
+                slidesPerView: 1,
+                spaceBetween: 0,
 
-            //     loop: true,
-            //     pagination: {
-            //         el: '.swiper-pagination',
-            //         clickable: true,
-            //     },
-            //     navigation: {
-            //         nextEl: '.swiper-button-next',
-            //         prevEl: '.swiper-button-prev',
-            //     },
-            //     scrollbar: {
-            //         el: '.swiper-scrollbar',
-            //     },
-            //     effect: 'cube',
-            // });
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+                // effect: 'cube',
+            });
 
             var swipertop = new Swiper('.swipertop', {
                 slidesPerView: 1,
