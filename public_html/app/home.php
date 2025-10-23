@@ -9,10 +9,12 @@
             <!-- Slides -->
             <div class="swiper-slide">
                 <div>
-                    <img src="assets/img/slider/slider-1920-01.jpg"
-                        srcset="assets/img/slider/slider-700-01.jpg 700w,
-                    assets/img/slider/slider-1024-01.jpg 1024w, 
-                    assets/img/slider/slider-1920-01.jpg 1920w" />
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="assets/img/slider/slider-1920-01_cr.jpg">
+                        <source media="(max-width: 700px)" srcset="assets/img/slider/slider-700-01.jpg">
+                        <source media="(max-width: 1024px)" srcset="assets/img/slider/slider-1024-01.jpg">
+                        <img src="assets/img/slider/slider-1920-01.jpg" alt="A 100 metros del centro de Barra do Chuí">
+                    </picture>
                     <div class="text">
                         <h2>A 100 metros del centro de Barra do Chuí</h2>
                     </div>
@@ -20,10 +22,12 @@
             </div>
             <div class="swiper-slide">
                 <div>
-                    <img src="assets/img/slider/slider-1920-02.jpg"
-                        srcset="assets/img/slider/slider-700-02.jpg 700w,
-                    assets/img/slider/slider-1024-02.jpg 1024w, 
-                assets/img/slider/slider-1920-02.jpg 1920w" />
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="assets/img/slider/slider-1920-02_cr.jpg">
+                        <source media="(max-width: 700px)" srcset="assets/img/slider/slider-700-02.jpg">
+                        <source media="(max-width: 1024px)" srcset="assets/img/slider/slider-1024-02.jpg">
+                        <img src="assets/img/slider/slider-1920-02.jpg" alt="Patio cerrado para su seguridad y comodidad">
+                    </picture>
                     <div class="text">
                         <h2>Patio cerrado para su seguridad y comodidad</h2>
                     </div>
@@ -31,10 +35,12 @@
             </div>
             <div class="swiper-slide">
                 <div>
-                    <img src="assets/img/slider/slider-1920-03.jpg"
-                        srcset="assets/img/slider/slider-700-03.jpg 700w,
-                    assets/img/slider/slider-1024-03.jpg 1024w, 
-                assets/img/slider/slider-1920-03.jpg 1920w" />
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="assets/img/slider/slider-1920-03_cr.jpg">
+                        <source media="(max-width: 700px)" srcset="assets/img/slider/slider-700-03.jpg">
+                        <source media="(max-width: 1024px)" srcset="assets/img/slider/slider-1024-03.jpg">
+                        <img src="assets/img/slider/slider-1920-03.jpg" alt="Amplia área verde con parrilleros para disfrutar en familia">
+                    </picture>
                     <div class="text">
                         <h2>Amplia área verde con parrilleros para disfrutar en familia</h2>
                     </div>
@@ -42,10 +48,12 @@
             </div>
             <div class="swiper-slide">
                 <div>
-                    <img src="assets/img/slider/slider-1920-04.jpg"
-                        srcset="assets/img/slider/slider-700-04.jpg 700w,
-                    assets/img/slider/slider-1024-04.jpg 1024w, 
-                    assets/img/slider/slider-1920-04.jpg 1920w" />
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="assets/img/slider/slider-1920-04_cr.jpg">
+                        <source media="(max-width: 700px)" srcset="assets/img/slider/slider-700-04.jpg">
+                        <source media="(max-width: 1024px)" srcset="assets/img/slider/slider-1024-04.jpg">
+                        <img src="assets/img/slider/slider-1920-04.jpg" alt="Estacionamiento interno para su vehículo">
+                    </picture>
                     <div class="text">
                         <h2>Estacionamiento interno para su vehículo</h2>
                     </div>
@@ -53,10 +61,12 @@
             </div>
             <div class="swiper-slide">
                 <div>
-                    <img src="assets/img/slider/slider-1920-05.jpg"
-                        srcset="assets/img/slider/slider-700-05.jpg 700w,
-                    assets/img/slider/slider-1024-05.jpg 1024w, 
-                    assets/img/slider/slider-1920-05.jpg 1920w" />
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="assets/img/slider/slider-1920-05_cr.jpg">
+                        <source media="(max-width: 700px)" srcset="assets/img/slider/slider-700-05.jpg">
+                        <source media="(max-width: 1024px)" srcset="assets/img/slider/slider-1024-05.jpg">
+                        <img src="assets/img/slider/slider-1920-05.jpg" alt="Confortables alojamientos para una estadía inolvidable">
+                    </picture>
                     <div class="text">
                         <h2>Confortables alojamientos para una estadía inolvidable</h2>
                     </div>
@@ -64,10 +74,12 @@
             </div>
             <div class="swiper-slide">
                 <div>
-                    <img src="assets/img/slider/slider-1920-06.jpg"
-                        srcset="assets/img/slider/slider-700-06.jpg 700w,
-                    assets/img/slider/slider-1024-06.jpg 1024w, 
-                    assets/img/slider/slider-1920-06.jpg 1920w" />
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="assets/img/slider/slider-1920-06_cr.jpg">
+                        <source media="(max-width: 700px)" srcset="assets/img/slider/slider-700-06.jpg">
+                        <source media="(max-width: 1024px)" srcset="assets/img/slider/slider-1024-06.jpg">
+                        <img src="assets/img/slider/slider-1920-06.jpg" alt="Un oasis de tranquilidad para tus vacaciones">
+                    </picture>
                     <div class="text">
                         <h2>Un oasis de tranquilidad para tus vacaciones</h2>
                     </div>
