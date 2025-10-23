@@ -27,14 +27,14 @@
             <div class="image"><?php swiper_init('cab7-8p'); ?></div>
             <div class="text">
                 <h2>Cabañas para 8 personas</h2>
-                <p>Perfectos para disfrutar en familia o con amigos.</p>
+                <p>Perfectas para disfrutar en familia o con amigos.</p>
             </div>
         </div>
         <div class="alojamientos-module">
             <div class="image"><?php swiper_init('cab9-10p'); ?></div>
             <div class="text">
                 <h2>Cabañas para 10 personas</h2>
-                <p>Perfectos para disfrutar en familia o con amigos.</p>
+                <p>Perfectas para disfrutar en familia o con amigos.</p>
             </div>
         </div>
         <div class="alojamientos-module">
