@@ -4,18 +4,19 @@
             <h1>Contacto</h1>
             <p>Estamos aquí para ayudarte. Si tienes alguna pregunta, inquietud o simplemente deseas obtener más información sobre nuestros alojamientos y servicios, no dudes en ponerte en contacto con nosotros.</p>
             <p>Puedes comunicarte con nosotros a través de los siguientes medios:</p>
-            <ul>
+            <ul class="contact-info">
                 <li><strong>Brasil:</strong></li>
-                <li><strong>Teléfono:</strong> +55 53 1234-5678</li>
-                <li><strong>WhatsApp:</strong> +55 53 1234-5678</li>
+                <li><strong>Teléfono:</strong> <a target="_blank" href="tel:+55312345678">(053) 1234-5678</a></li>
+                <li><strong>WhatsApp:</strong> <a target="_blank" href="https://wa.me/555312345678">+55 53 1234-5678</a></li>
+                <li class="spacer"></li>
                 <li><strong>Uruguay:</strong></li>
-                <li><strong>Teléfono:</strong> 097 090 957</li>
-                <li><strong>WhatsApp:</strong> +598 9709 0957</li>
-                <li><strong>Email:</strong>bordascardozo@gmail.com</li>
+                <li><strong>Teléfono:</strong> <a target="_blank" href="tel:097090957">097 090 957</a></li>
+                <li><strong>WhatsApp:</strong> <a target="_blank" href="https://wa.me/59897090957">+598 9709 0957</a></li>
+                <li class="spacer"></li>
+                <li><strong>Email:</strong> <a target="_blank" href="mailto:bordascardozo@gmail.com">bordascardozo@gmail.com</a></li>
             </ul>
         </div>
         <div>
-            <p>O sírvase rellenar el siguiente formulario:</p>
             <section id="formContainer"></section>
         </div>
     </section>

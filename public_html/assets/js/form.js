@@ -5,7 +5,7 @@ printForm();
 
 function printForm(mes = "", nam = "", mai = "") {
   let frm =
-    `<form name="contacto" id="contacto">
+    `<p>O sírvase rellenar el siguiente formulario:</p><form name="contacto" id="contacto">
   <label for="mens">Escriba su consulta</label>
   <textarea name="mens" id="mens">` +
     mes +

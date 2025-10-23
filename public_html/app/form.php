@@ -29,9 +29,9 @@ if (empty($message)) {
 if (empty($errors)) {
     date_default_timezone_set('America/Sao_Paulo');
     // $toEmail = 'glaucius_zacher@hotmail.com';
-    $toEmail = 'orozco8@adinet.com.uy';
+    $toEmail = 'bordascardozo@gmail.com';
     // Define and Base64 encode the subject line
-    $subject_text = 'Contacto através de losorozco.com';
+    $subject_text = 'Contacto através de paraisochui.com';
     $subject = '=?UTF-8?B?' . base64_encode($subject_text) . '?=';
     // Add custom headers
     $headers = 'Content-Type: text/html; charset=utf-8' . "\r\n";

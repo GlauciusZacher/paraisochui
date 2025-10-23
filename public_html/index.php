@@ -1,11 +1,26 @@
 <?php
 $page = $_GET['page'] ?? 'home';
 $pages = ['home', 'alojamientos', 'ubicacion', 'contacto'];
+$links = [
+    'home' => '/',
+    'alojamientos' => '/alojamientos',
+    'ubicacion' => '/ubicacion',
+    'contacto' => '/contacto',
+];
+$page_to_load = 'home';
+if (array_key_exists($page, $links)) {
+    $page_to_load = $page;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/swiper/swiper-bundle.min.css" />
@@ -18,18 +33,16 @@ $pages = ['home', 'alojamientos', 'ubicacion', 'contacto'];
         <div class="logo"><img src="assets/img/logo.png" alt="Logo"></div>
         <nav class="navbar">
             <ul class="nav-links">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/alojamientos">Alojamientos</a></li>
-                <li><a href="/ubicacion">Ubicación</a></li>
-                <li><a href="/contacto">Contacto</a></li>
+                <?php foreach ($links as $name => $link) : ?>
+                    <?php $activeClass = ($page_to_load === $name) ? 'active' : ''; ?>
+                    <li><a href="<?= $link ?>" class="<?= $activeClass ?>"><?= ucfirst($name) ?></a></li>
+                <?php endforeach; ?>
             </ul>
         </nav>
     </header>
     <?php
-    if (in_array($page, $pages)) {
-        $file = "app/{$page}.php";
-        include(is_file($file) ? $file : 'app/home.php');
-    }
+    $file = "app/{$page_to_load}.php";
+    include(is_file($file) ? $file : 'app/home.php');
     ?>
     <script src="./assets/swiper/swiper-bundle.min.js"></script>
     <script>
@@ -51,6 +64,12 @@ $pages = ['home', 'alojamientos', 'ubicacion', 'contacto'];
                     el: '.swiper-scrollbar',
                 },
                 // effect: 'cube',
+                autoplay: {
+                    delay: 5000,
+                },
+                pauseOnMouseEnter: true, // Pause autoplay on mouse hover
+                disableOnInteraction: true, // Optional: Autoplay continues after user interaction`
+                stopOnLastSlide: true, // Optional: Autoplay stops on the last slide
             });
 
             var swipertop = new Swiper('.swipertop', {
@@ -70,13 +89,15 @@ $pages = ['home', 'alojamientos', 'ubicacion', 'contacto'];
                 scrollbar: {
                     el: '.swiper-scrollbar',
                 },
+                autoplay: {
+                    delay: 5000,
+                },
+                // disableOnInteraction: false,
                 keyboard: {
                     enabled: true, // Enable keyboard control
                     // onlyInViewport: true, // Optional: Only enable when Swiper is in the viewport
                     pageUpDown: true, // Optional: Enable Page Up/Down keys for pagination
                     // effect: 'fade',
-                    // autoplay: {
-                    //     delay: 5000,
                 },
             });
         });

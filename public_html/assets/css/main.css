@@ -25,10 +25,15 @@ html {
 
 body {
     background-color: var(--background-primary);
-    font-family: 'Krub', cursive;
-    font-size: 0.9em;
+    /* font-family: 'Krub', cursive; */
+    font-size: 1em;
     margin: 0;
     width: 100%;
+
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    font-style: normal;
+
     /* display: grid;
     grid-template-rows: min-content 60px auto 80px; */
     /* background-color: #3074A4; */
@@ -60,7 +65,7 @@ nav.navbar {
     /* background-color: rgba(255, 255, 255, 0.8); */
     background-color: var(--background-primary);
     border-bottom: 4px solid var(--background-secondary);
-    border-left: 4px solid var(--background-secondary);
+    border-left: 2px solid var(--background-secondary);
     padding: 10px 20px;
     border-bottom-left-radius: 10px;
 }
@@ -73,10 +78,19 @@ nav.navbar ul {
     gap: 15px;
 }
 
-nav.navbar ul li a {
+nav.navbar a {
     text-decoration: none;
     color: white;
-    font-weight: 700;
+    font-weight: 400;
+}
+
+nav.navbar a:hover {
+    text-decoration: underline;
+}
+
+nav.navbar a.active {
+    font-weight: 600;
+    /* text-decoration: underline; */
 }
 
 .rounded {
@@ -86,32 +100,47 @@ nav.navbar ul li a {
     height: 100vh;
 }
 
+/* .swipertop {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+} */
+
 .swipertop .swiper-wrapper {
     width: auto;
     height: 100%;
+    min-height: 100%;
 }
 
-.swipertop .swiper-slide>img {
+.swipertop .swiper-slide {
+    height: auto !important;
+}
+
+.swipertop .swiper-slide img {
     /* width: 500px; */
     /* height: 500px; */
     height: fit-content(100vh);
     width: auto;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
-.swipertop .swiper-slide>div.text {
+.swipertop .swiper-slide div.text {
     position: absolute;
-    top: calc(90vh - 20px);
+    top: calc(90vh - 40px);
     left: 0;
     padding: 10px;
     color: #fff;
     background-color: rgba(28, 121, 130, .7);
-    width: calc(100% - 20px);
+    /* width: calc(100% - 20px); */
+    width: 100%;
     text-align: center;
-    font-weight: 700
+    font-weight: 700;
+    font-size: .9em;
 }
 
-.swipertop .swiper-slide>div.text>h2 {
+.swipertop .swiper-slide div.text>h2 {
     margin: 0;
 }
 
@@ -139,42 +168,66 @@ main {
     justify-content: center;
 }
 
+.alojamientos-top h1,
+.alojamientos-top h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.alojamientos-top {
+    width: 100%;
+    margin-bottom: 40px;
+    flex-grow: 1;
+    background-color: white;
+    border: 2px solid var(--background-secondary);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    text-indent: 20px;
+}
+
 .alojamientos-module {
     display: flex;
     align-items: stretch;
     justify-content: center;
     gap: 20px;
+    background-color: white;
+    border: 2px solid var(--background-secondary);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 100%;
 }
 
 /* .alojamientos-module>div>img {
     width: 100%;
     border-radius: 10px;
 } */
-.alojamientos-module>div.image {
+.alojamientos-module div.image {
     display: flex;
     flex: 1;
     background-color: white;
-    border: 4px solid var(--background-secondary);
+    /* border: 4px solid var(--background-secondary); */
     border-radius: 10px;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
-.alojamientos-module>div.image>img {
+.alojamientos-module div.image>img {
     max-width: 100%;
     object-fit: contain;
     border-radius: 10px;
 }
 
-.alojamientos-module>div.text {
+.alojamientos-module div.text {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     flex: 1;
     background-color: white;
-    border: 4px solid var(--background-secondary);
+    /* border: 4px solid var(--background-secondary); */
     border-radius: 10px;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .alojamientos-module .swiper-container {
@@ -192,9 +245,13 @@ main {
     border-radius: 10px;
 }
 
+.alojamientos-module .swiper-pagination-bullet-active {
+    background-color: var(--background-secondary);
+}
+
 #map {
     margin: auto;
-    border: 4px solid var(--background-secondary);
+    border: 2px solid var(--background-secondary);
     border-radius: 10px;
     min-width: 300px;
     min-height: 300px;
@@ -217,7 +274,7 @@ main {
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 .contacto {
@@ -230,15 +287,30 @@ main {
 .contacto>div {
     flex: 1;
     background-color: white;
-    border: 4px solid var(--background-secondary);
+    border: 2px solid var(--background-secondary);
     border-radius: 10px;
     padding: 20px;
 }
 
+#formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100%;
+}
+
 #formContainer form {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    display: flex;
+    /* grid-template-columns: 1fr 3fr; */
+    flex-direction: column;
     gap: 1em;
+}
+
+#formContainer label {
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
 }
 
 #formContainer form input,
@@ -247,7 +319,7 @@ main {
     padding: 8px;
     border: 2px solid var(--background-secondary);
     border-radius: 5px;
-    font-family: 'Krub', cursive;
+    /* font-family: 'Krub', cursive; */
     font-size: 1em;
     resize: vertical;
 }
@@ -262,12 +334,13 @@ main {
     border-color: var(--background-primary);
 }
 
-#formContainer form label {
-    justify-self: end;
-    align-self: center;
+#formContainer p.alert {
+    font-weight: 700;
+    color: var(--background-primary);
+    text-align: center;
 }
 
-#formContainer p.alert {
+#formContainer p.success {
     font-weight: 700;
     color: var(--background-primary);
     text-align: center;
@@ -278,17 +351,88 @@ main {
     grid-column: span 2;
     padding: 10px;
     background-color: var(--background-primary);
-    border: 4px solid var(--background-secondary);
+    border: 2px solid var(--background-secondary);
     color: white;
     /* border: none; */
     border-radius: 5px;
     font-size: 1em;
     font-weight: 700;
     cursor: pointer;
+    width: 100%;
+}
+
+ul.contact-info {
+    list-style: none;
+    /* padding: 0; */
+}
+
+ul.contact-info strong {
+    font-weight: 600;
+}
+
+ul.contact-info a {
+    color: var(--background-primary);
+    text-decoration: none;
+}
+
+ul.contact-info li {
+    margin-bottom: 10px;
+}
+
+ul.contact-info li.spacer {
+    margin-bottom: 20px;
 }
 
 @media (max-width: 800px) {
+    .swipertop .swiper-slide div.text {
+        font-size: 0.8em;
+    }
+
     .alojamientos-module {
         flex-direction: column;
+    }
+
+    .contacto {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 700px) {
+    .logo {
+        top: 50px;
+    }
+
+    .logo img {
+        filter: drop-shadow(0 0 2px #000);
+    }
+}
+
+@media (max-width: 560px) {
+    .swipertop .swiper-slide div.text {
+        top: calc(90vh - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .swipertop .swiper-slide div.text {
+        top: calc(90vh - 60px);
+    }
+}
+
+@media (max-width: 440px) {
+    .swipertop .swiper-slide div.text {
+        top: calc(90vh - 80px);
+    }
+}
+
+@media (max-width: 360px) {
+    nav.navbar a {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 330px) {
+    nav.navbar a {
+        font-size: 0.8em;
     }
 }
