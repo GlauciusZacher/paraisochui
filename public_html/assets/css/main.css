@@ -218,6 +218,10 @@ main {
     border-radius: 10px;
 }
 
+.test {
+    border: 2px solid red;
+}
+
 .alojamientos-module div.text {
     display: flex;
     flex-direction: column;
