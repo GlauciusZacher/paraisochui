@@ -413,19 +413,19 @@ ul.contact-info li.spacer {
 
 @media (max-width: 560px) {
     .swipertop .swiper-slide div.text {
-        top: calc(90vh - 40px);
+        top: calc(90vh - 60px);
     }
 }
 
 @media (max-width: 480px) {
     .swipertop .swiper-slide div.text {
-        top: calc(90vh - 60px);
+        top: calc(90vh - 80px);
     }
 }
 
 @media (max-width: 440px) {
     .swipertop .swiper-slide div.text {
-        top: calc(90vh - 80px);
+        top: calc(90vh - 100px);
     }
 }
 
