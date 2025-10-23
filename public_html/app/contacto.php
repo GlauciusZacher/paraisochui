@@ -6,8 +6,8 @@
             <p>Puedes comunicarte con nosotros a través de los siguientes medios:</p>
             <ul class="contact-info">
                 <li><strong>Brasil:</strong></li>
-                <li><strong>Teléfono:</strong> <a target="_blank" href="tel:+55312345678">(053) 1234-5678</a></li>
-                <li><strong>WhatsApp:</strong> <a target="_blank" href="https://wa.me/555312345678">+55 53 1234-5678</a></li>
+                <li><strong>Teléfono:</strong> <a target="_blank" href="tel:+5399435347">(053) 9943-5347</a></li>
+                <li><strong>WhatsApp:</strong> <a target="_blank" href="https://wa.me/555399435347">+55 53 9943-5347</a></li>
                 <li class="spacer"></li>
                 <li><strong>Uruguay:</strong></li>
                 <li><strong>Teléfono:</strong> <a target="_blank" href="tel:097090957">097 090 957</a></li>
