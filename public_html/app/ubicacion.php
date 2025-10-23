@@ -3,5 +3,5 @@
     <section id="map"></section>
 </main>
 
-<script src="./assets/maps/google-maps.js"></script>
-<script src="./assets/maps/map.js"></script>
+<!-- <script src="./assets/maps/google-maps.js"></script>
+<script src="./assets/maps/map.js"></script> -->

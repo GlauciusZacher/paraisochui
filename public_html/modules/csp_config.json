@@ -1,0 +1,54 @@
+{
+    "default-src": [
+        "'none'"
+    ],
+    "font-src": [
+        "'self'",
+        "data:",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com"
+    ],
+    "script-src": [
+        "'self'",
+        "'nonce-%NONCE%'",
+        "'strict-dynamic'",
+        "https:",
+        "'unsafe-inline'"
+    ],
+    "style-src": [
+        "'self'",
+        "'unsafe-inline'",
+        "fonts.googleapis.com"
+    ],
+    "connect-src": [
+        "'self'",
+        "https://maps.googleapis.com",
+        "https://mapsresources-pa.googleapis.com"
+    ],
+    "frame-src": [
+        "'self'",
+        "youtube.com",
+        "www.youtube.com"
+    ],
+    "img-src": [
+        "'self'",
+        "data:",
+        "maps.gstatic.com",
+        "*.googleapis.com",
+        "*.ggpht.com",
+        "*.ytimg.com"
+    ],
+    "base-uri": [
+        "'self'"
+    ],
+    "form-action": [
+        "'self'"
+    ],
+    "block-all-mixed-content": [],
+    "require-trusted-types-for": [
+        "'script'"
+    ],
+    "manifest-src": [
+        "'self'"
+    ]
+}

@@ -1,4 +1,8 @@
 <?php
+require('modules/security/load_css_js.php');
+require('modules/security/sec_header.php');
+require('modules/security/security.php');
+
 $page = $_GET['page'] ?? 'home';
 $pages = ['home', 'alojamientos', 'ubicacion', 'contacto'];
 $links = [
@@ -16,15 +20,16 @@ if (array_key_exists($page, $links)) {
 <html lang="en">
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        <?php
+        loader('swiper-bundle.min', 'css', 'assets/swiper');
+        loader('main', 'css', 'assets/css');
+        ?>
+    </style>
+    <!-- <link rel="stylesheet" href="assets/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/main.css"> -->
     <title>Paraíso Chuí</title>
 </head>
 
@@ -44,8 +49,26 @@ if (array_key_exists($page, $links)) {
     $file = "app/{$page_to_load}.php";
     include(is_file($file) ? $file : 'app/home.php');
     ?>
-    <script src="./assets/swiper/swiper-bundle.min.js"></script>
-    <script>
+    <!-- <script src="./assets/swiper/swiper-bundle.min.js"></script> -->
+    <script nonce="<?= $nonce ?>">
+        <?php
+        loader('trustedtypes.api_only.build', 'js', 'modules/security');
+        loader('purify', 'js', 'modules/security');
+        loader('require_trusted_types', 'js', 'modules/security/');
+
+        loader('swiper-bundle.min', 'js', 'assets/swiper');
+
+        if ($page_to_load === 'ubicacion') {
+            loader('google-maps', 'js', 'assets/maps');
+            loader('map', 'js', 'assets/maps');
+        }
+
+        if ($page_to_load === 'contacto') {
+            loader('form', 'js', 'assets/js');
+        }
+
+        ?>
+
         document.addEventListener('DOMContentLoaded', function() {
             var swiper = new Swiper('.swiper', {
                 slidesPerView: 1,

@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Delius';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Delius'),
+        url('../../assets/fnt/Delius-Regular.ttf') format('truetype');
+}
+
 :root {
     --prim: #a43074;
     --sec: #3074A4;
@@ -99,14 +107,6 @@ nav.navbar a.active {
     width: 100vw;
     height: 100vh;
 }
-
-/* .swipertop {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-} */
 
 .swipertop .swiper-wrapper {
     width: auto;
@@ -241,12 +241,14 @@ main {
     height: auto;
 }
 
+.alojamientos-module .image {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .alojamientos-module .swiper-slide>img {
-    /* width: 500px; */
-    /* height: 500px; */
     width: 100%;
     height: auto;
-    border-radius: 10px;
 }
 
 .alojamientos-module .swiper-pagination-bullet-active {
