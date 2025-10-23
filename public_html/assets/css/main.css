@@ -47,7 +47,7 @@ body {
 } */
 
 .logo {
-    position: absolute;
+    position: fixed;
     top: 10px;
     left: 10px;
     z-index: 11;
@@ -58,7 +58,7 @@ body {
 }
 
 nav.navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 11;
@@ -409,6 +409,10 @@ ul.contact-info li.spacer {
     .logo img {
         filter: drop-shadow(0 0 2px #000);
     }
+
+    main {
+        padding-top: 140px;
+    }
 }
 
 @media (max-width: 560px) {
@@ -420,6 +424,14 @@ ul.contact-info li.spacer {
 @media (max-width: 480px) {
     .swipertop .swiper-slide div.text {
         top: calc(90vh - 80px);
+    }
+
+    #map {
+        top: 180px;
+    }
+
+    .gmaps_link {
+        top: 140px;
     }
 }
 
